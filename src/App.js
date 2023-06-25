@@ -34,7 +34,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="layout">
       <TodoHead />
       <TodoCreate addTodo={addTodo} />
       <TodoList
