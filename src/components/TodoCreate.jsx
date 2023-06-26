@@ -13,8 +13,7 @@ const TodoCreate = ({ todos, setTodos }) => {
     setContents(event.target.value);
   };
 
-  const handleAddTodo = (event) => {
-    event.preventDefault();
+  const handleAddTodo = () => {
     const newTodo = {
       id: Date.now(),
       title,
@@ -22,7 +21,7 @@ const TodoCreate = ({ todos, setTodos }) => {
       isDone: false,
     };
     setTodos([...todos, newTodo]);
-
+    console.log(todos, newTodo);
     // input값 초기화
     setTitle("");
     setContents("");
@@ -34,6 +33,7 @@ const TodoCreate = ({ todos, setTodos }) => {
         <div className="con-1">
           {/*<span className="input-title">제목</span>*/}
           <input
+            type="text"
             value={title}
             onChange={titleChangeHandler}
             placeholder="제목을 입력하세요"
@@ -42,6 +42,7 @@ const TodoCreate = ({ todos, setTodos }) => {
         <div className="con-2">
           {/*<span className="input-title">내용</span>*/}
           <input
+            type="text"
             value={contents}
             onChange={contentsChangeHandler}
             placeholder="내용을 입력하세요"
@@ -49,7 +50,7 @@ const TodoCreate = ({ todos, setTodos }) => {
         </div>
       </div>
 
-      <button className="add-button" onClick={handleAddTodo}>
+      <button className="add-button" type="button" onClick={handleAddTodo}>
         추가하기
       </button>
     </form>
