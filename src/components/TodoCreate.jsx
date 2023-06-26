@@ -15,13 +15,13 @@ const TodoCreate = ({ todos, setTodos }) => {
 
   const handleAddTodo = () => {
     const newTodo = {
-      id: Date.now(),
+      id: todos[todos.length - 1].id + 1,
       title,
       contents,
       isDone: false,
     };
     setTodos([...todos, newTodo]);
-    console.log(todos, newTodo);
+
     // input값 초기화
     setTitle("");
     setContents("");
