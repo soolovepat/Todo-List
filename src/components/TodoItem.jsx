@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoItem = ({ todo, removeTodo, doneTodo, cancleTodo }) => {
+const TodoItem = ({ todo, removeTodo, doneTodo, cancelTodo }) => {
   const { id, title, contents, isDone } = todo;
 
   const handleRemove = () => {
@@ -12,7 +12,7 @@ const TodoItem = ({ todo, removeTodo, doneTodo, cancleTodo }) => {
   };
 
   const handleCancel = () => {
-    cancleTodo(id);
+    cancelTodo(id);
   };
 
   return (

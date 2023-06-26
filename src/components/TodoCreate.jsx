@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TodoCreate.css";
 
-const TodoCreate = ({ addTodo }) => {
+const TodoCreate = ({ todos, setTodos }) => {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
 
@@ -21,7 +21,9 @@ const TodoCreate = ({ addTodo }) => {
       contents,
       isDone: false,
     };
-    addTodo(newTodo);
+    setTodos([...todos, newTodo]);
+
+    // input값 초기화
     setTitle("");
     setContents("");
   };

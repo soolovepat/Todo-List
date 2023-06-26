@@ -10,39 +10,11 @@ const App = () => {
     { id: 2, title: "여행 가기", contents: "장소 정하기", isDone: true },
   ]);
 
-  const addTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
-  };
-
-  const removeTodo = (id) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
-  };
-
-  const doneTodo = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isDone: true } : todo
-    );
-    setTodos(updatedTodos);
-  };
-
-  const cancleTodo = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isDone: false } : todo
-    );
-    setTodos(updatedTodos);
-  };
-
   return (
     <div className="layout">
       <TodoHead />
-      <TodoCreate addTodo={addTodo} />
-      <TodoList
-        todos={todos}
-        removeTodo={removeTodo}
-        doneTodo={doneTodo}
-        cancleTodo={cancleTodo}
-      />
+      <TodoCreate todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
