@@ -9,15 +9,15 @@
 .list-wrapper {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
 .todo-container {
-  min-width: 212px;
+  min-width: 226px;
   padding: 24px;
 
   display: flex;
-  /*align-items: center;*/
   flex-direction: column;
 
   border-radius: 14px;
