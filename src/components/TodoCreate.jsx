@@ -18,7 +18,9 @@ const TodoCreate = ({ todos, setTodos }) => {
       ...todo,
       isDone: false,
     };
-    setTodos([...todos, newTodo]);
+    if (todo.title !== "" && todo.contents !== "") {
+      setTodos([...todos, newTodo]);
+    }
 
     // input값 초기화
     setTodo({ title: "", contents: "" });
