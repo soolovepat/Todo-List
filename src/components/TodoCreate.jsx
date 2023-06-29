@@ -2,29 +2,26 @@ import React, { useState } from "react";
 import "./TodoCreate.css";
 
 const TodoCreate = ({ todos, setTodos }) => {
-  const [title, setTitle] = useState("");
-  const [contents, setContents] = useState("");
+  const [todo, setTodo] = useState({ title: "", contents: "" });
 
   const titleChangeHandler = (event) => {
-    setTitle(event.target.value);
+    setTodo({ ...todo, title: event.target.value });
   };
 
   const contentsChangeHandler = (event) => {
-    setContents(event.target.value);
+    setTodo({ ...todo, contents: event.target.value });
   };
 
   const handleAddTodo = () => {
     const newTodo = {
       id: todos[todos.length - 1].id + 1,
-      title,
-      contents,
+      ...todo,
       isDone: false,
     };
     setTodos([...todos, newTodo]);
 
     // input값 초기화
-    setTitle("");
-    setContents("");
+    setTodo({ title: "", contents: "" });
   };
 
   return (
@@ -34,7 +31,7 @@ const TodoCreate = ({ todos, setTodos }) => {
           {/*<span className="input-title">제목</span>*/}
           <input
             type="text"
-            value={title}
+            value={todo.title}
             onChange={titleChangeHandler}
             placeholder="제목을 입력하세요"
           />
@@ -43,7 +40,7 @@ const TodoCreate = ({ todos, setTodos }) => {
           {/*<span className="input-title">내용</span>*/}
           <input
             type="text"
-            value={contents}
+            value={todo.contents}
             onChange={contentsChangeHandler}
             placeholder="내용을 입력하세요"
           />
