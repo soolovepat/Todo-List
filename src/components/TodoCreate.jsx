@@ -27,24 +27,19 @@ const TodoCreate = ({ todos, setTodos }) => {
   return (
     <form className="text-form">
       <div className="input-area">
-        <div className="con-1">
-          {/*<span className="input-title">제목</span>*/}
-          <input
-            type="text"
-            value={todo.title}
-            onChange={titleChangeHandler}
-            placeholder="제목을 입력하세요"
-          />
-        </div>
-        <div className="con-2">
-          {/*<span className="input-title">내용</span>*/}
-          <input
-            type="text"
-            value={todo.contents}
-            onChange={contentsChangeHandler}
-            placeholder="내용을 입력하세요"
-          />
-        </div>
+        <input
+          type="text"
+          value={todo.title}
+          onChange={titleChangeHandler}
+          placeholder="제목을 입력하세요"
+        />
+
+        <input
+          type="text"
+          value={todo.contents}
+          onChange={contentsChangeHandler}
+          placeholder="내용을 입력하세요"
+        />
       </div>
 
       <button className="add-button" type="button" onClick={handleAddTodo}>
