@@ -11,10 +11,20 @@ const TodoItem = ({ todo, removeTodo, toggleTodo }) => {
     toggleTodo(id);
   };
 
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.substring(0, maxLength) + "...";
+  };
+
+  const truncatedTitle = truncateText(title, 10);
+  const truncatedContents = truncateText(contents, 10);
+
   return (
     <div className="todo-container" key={id}>
-      <h3>{title}</h3>
-      <div className="todo-text">{contents}</div>
+      <h3>{truncatedTitle}</h3>
+      <div className="todo-text">{truncatedContents}</div>
       <div className="todo-button">
         {isDone ? (
           <>
