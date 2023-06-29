@@ -1,18 +1,14 @@
 import React from "react";
 
-const TodoItem = ({ todo, removeTodo, doneTodo, cancelTodo }) => {
+const TodoItem = ({ todo, removeTodo, toggleTodo }) => {
   const { id, title, contents, isDone } = todo;
 
   const handleRemove = () => {
     removeTodo(id);
   };
 
-  const handleDone = () => {
-    doneTodo(id);
-  };
-
-  const handleCancel = () => {
-    cancelTodo(id);
+  const handleToggle = () => {
+    toggleTodo(id);
   };
 
   return (
@@ -25,7 +21,7 @@ const TodoItem = ({ todo, removeTodo, doneTodo, cancelTodo }) => {
             <button className="delete-button" onClick={handleRemove}>
               삭제하기
             </button>
-            <button className="cancle-button" onClick={handleCancel}>
+            <button className="cancel-button" onClick={handleToggle}>
               취소
             </button>
           </>
@@ -34,7 +30,7 @@ const TodoItem = ({ todo, removeTodo, doneTodo, cancelTodo }) => {
             <button className="delete-button" onClick={handleRemove}>
               삭제하기
             </button>
-            <button className="complete-button" onClick={handleDone}>
+            <button className="complete-button" onClick={handleToggle}>
               완료
             </button>
           </>

@@ -2,55 +2,55 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
+const TodoSection = ({ title, todos, removeTodo, toggleTodo, isDone }) => {
+  const filteredTodos = todos.filter((todo) => todo.isDone === isDone);
+
+  return (
+    <section className="todo-section">
+      <h2 className="list-title">{title}</h2>
+      <ul className="list-wrapper">
+        {filteredTodos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            removeTodo={removeTodo}
+            toggleTodo={toggleTodo}
+          />
+        ))}
+      </ul>
+    </section>
+  );
+};
+
 const TodoList = ({ todos, setTodos }) => {
   const removeTodo = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
   };
 
-  const doneTodo = (id) => {
+  const toggleTodo = (id) => {
     const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isDone: true } : todo
+      todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
     );
     setTodos(updatedTodos);
-  };
-
-  const cancelTodo = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isDone: false } : todo
-    );
-    setTodos(updatedTodos);
-  };
-
-  const workingFilter = todos.filter((todo) => !todo.isDone);
-  const doneFilter = todos.filter((todo) => todo.isDone);
-
-  const renderTodoItems = (filteredTodos, onRemove, onToggle) => {
-    return filteredTodos.map((todo) => (
-      <TodoItem
-        key={todo.id}
-        todo={todo}
-        removeTodo={onRemove}
-        doneTodo={onToggle}
-        cancelTodo={onToggle} // cancelTodo가 필요한 경우에도 onToggle로 사용
-      />
-    ));
   };
 
   return (
     <div className="todo-list">
-      <section className="working-sec">
-        <h2 className="list-title">Working..🔥</h2>
-        <ul className="list-wrapper">
-          {renderTodoItems(workingFilter, removeTodo, doneTodo)}
-        </ul>
-      </section>
-      <section className="done-sec">
-        <h2 className="list-title">Done..!🎉</h2>
-        <ul className="list-wrapper">
-          {renderTodoItems(doneFilter, removeTodo, cancelTodo)}
-        </ul>
-      </section>
+      <TodoSection
+        title="Working..🔥"
+        todos={todos}
+        removeTodo={removeTodo}
+        toggleTodo={toggleTodo}
+        isDone={false}
+      />
+      <TodoSection
+        title="Done..!🎉"
+        todos={todos}
+        removeTodo={removeTodo}
+        toggleTodo={toggleTodo}
+        isDone={true}
+      />
     </div>
   );
 };
