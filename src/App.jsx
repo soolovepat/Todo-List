@@ -11,11 +11,11 @@ const App = () => {
   ]);
 
   return (
-    <div className="layout">
+    <main className="layout">
       <TodoHead />
       <TodoCreate todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
-    </div>
+    </main>
   );
 };
 
