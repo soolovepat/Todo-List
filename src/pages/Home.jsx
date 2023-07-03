@@ -3,7 +3,7 @@ import TodoHead from "./components/TodoHead";
 import TodoCreate from "./components/TodoCreate";
 import TodoList from "./components/TodoList";
 
-function Home() {
+const Home = () => {
   return (
     <div>
       <TodoHead />
@@ -11,6 +11,6 @@ function Home() {
       <TodoList />
     </div>
   );
-}
+};
 
 export default Home;
