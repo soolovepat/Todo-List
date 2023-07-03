@@ -88,12 +88,9 @@ const StForm = styled.form`
 
   .add-button {
     padding: 0 24px;
-    border: 0;
-    border-radius: 52px;
     font-size: 18px;
-    font-weight: 500;
     line-height: 52px;
-    letter-spacing: -1px;
+
     color: #444;
     background-color: #57ffbc;
   }

@@ -10,7 +10,7 @@ function Detail() {
     return item.id === parseInt(params.id);
   });
   return (
-    <StDetail>
+    <StDetail className="shadow-box">
       <div>
         <span>ID : {findData.id}</span>
         <button onClick={() => Navigate("/")}>이전으로</button>
@@ -24,7 +24,23 @@ function Detail() {
 export default Detail;
 
 const StDetail = styled.div`
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
+  margin: 80px auto;
+  max-width: 500px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 14px;
+  }
+
+  button {
+    color: #535353;
+  }
+
+  h1 {
+    margin: 40px 0 0 0;
+  }
 `;

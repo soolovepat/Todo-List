@@ -26,7 +26,7 @@ const TodoItem = ({ todo }) => {
   const truncatedDesc = truncateText(desc, 13);
 
   return (
-    <div className="todo-container" key={id}>
+    <div className="todo-container shadow-box" key={id}>
       <h3>{truncatedTitle}</h3>
       <div className="todo-text">{truncatedDesc}</div>
       <div>
