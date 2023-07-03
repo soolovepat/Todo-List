@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 function Detail() {
   const todos = useSelector((state) => state.todos);
   const params = useParams();
+  const navigate = useNavigate();
   const findData = todos.find((item) => {
     return item.id === parseInt(params.id);
   });
@@ -13,7 +14,7 @@ function Detail() {
     <StDetail className="shadow-box">
       <div>
         <span>ID : {findData.id}</span>
-        <button onClick={() => Navigate("/")}>이전으로</button>
+        <button onClick={() => navigate("/")}>이전으로</button>
       </div>
       <h1>{findData.title}</h1>
       <p>{findData.desc}</p>
