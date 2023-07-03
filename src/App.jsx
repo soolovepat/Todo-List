@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import GlobalStyle from "./GlobalStyle";
 import TodoHead from "./components/TodoHead";
 import TodoCreate from "./components/TodoCreate";
 import TodoList from "./components/TodoList";
@@ -12,6 +12,7 @@ const App = () => {
 
   return (
     <main className="layout">
+      <GlobalStyle />
       <TodoHead />
       <TodoCreate todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
