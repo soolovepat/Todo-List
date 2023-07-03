@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
 import { addTodo } from "../../Redux/modules/todos";
 
 const TodoCreate = () => {
   const dispatch = useDispatch();
   const [todo, setTodo] = useState({ title: "", desc: "" });
-  const [nextId, setNextId] = useState(3);
+  const nextId = useSelector(
+    (state) => state.todos[state.todos.length - 1].id + 1
+  );
 
   const titleChangeHandler = (event) => {
     setTodo({ ...todo, title: event.target.value });
@@ -24,8 +26,6 @@ const TodoCreate = () => {
     };
     if (todo.title !== "" && todo.desc !== "") {
       dispatch(addTodo(newTodo));
-      setNextId((prevId) => prevId + 1);
-      console.log(newTodo);
     }
 
     // input값 초기화
