@@ -4,7 +4,7 @@ import Router from "./shared/Router";
 
 const App = () => {
   return (
-    <main className="layout">
+    <main>
       <GlobalStyle />
       <Router />
     </main>
