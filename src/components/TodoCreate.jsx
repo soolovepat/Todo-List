@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./TodoCreate.css";
+import { styled } from "styled-components";
 
 const TodoCreate = ({ todos, setTodos }) => {
   const [todo, setTodo] = useState({ title: "", contents: "" });
@@ -27,7 +27,7 @@ const TodoCreate = ({ todos, setTodos }) => {
   };
 
   return (
-    <form className="text-form">
+    <StForm className="text-form">
       <div className="input-area">
         <input
           type="text"
@@ -47,8 +47,48 @@ const TodoCreate = ({ todos, setTodos }) => {
       <button className="add-button" type="button" onClick={handleAddTodo}>
         추가하기
       </button>
-    </form>
+    </StForm>
   );
 };
 
 export default TodoCreate;
+
+const StForm = styled.form`
+  padding: 30px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 12px 30px 6px rgba(0, 0, 0, 0.09);
+
+  input {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 52px;
+    color: #fff;
+    border: 0;
+    border-radius: 22px;
+    background-color: #222;
+  }
+
+  .input-area {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input:nth-child(2) {
+    margin-left: 30px;
+  }
+
+  .add-button {
+    padding: 0 24px;
+    border: 0;
+    border-radius: 52px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: -1px;
+    color: #444;
+    background-color: #57ffbc;
+  }
+`;

@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import { styled } from "styled-components";
 import "./TodoList.css";
 
 const TodoSection = ({ title, todos, removeTodo, toggleTodo, isDone }) => {
