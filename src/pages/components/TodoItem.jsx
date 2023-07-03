@@ -30,8 +30,8 @@ const TodoItem = ({ todo }) => {
     <StTodo className="shadow-box" key={id}>
       <h3>{truncatedTitle}</h3>
       <div className="todo-text">{truncatedDesc}</div>
-      <div>
-        <Link to={`/${id}`}>상세보기</Link>
+      <div className="detail-link">
+        <Link to={`/${id}`}>자세히보기 &gt;</Link>
       </div>
       <div className="todo-button">
         {isDone ? (
@@ -68,8 +68,19 @@ const StTodo = styled.div`
   }
 
   .todo-text {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
+
+  .detail-link {
+    margin-bottom: 24px;
+  }
+
+  a {
+    font-size: 16px;
+    color: #8f8f8f;
+    text-decoration: none;
+  }
+
   .todo-button {
     display: flex;
     justify-content: space-between;
