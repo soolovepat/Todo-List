@@ -5,15 +5,15 @@ import { addTodo } from "../../Redux/modules/todos";
 
 const TodoCreate = () => {
   const dispatch = useDispatch();
-  const [todo, setTodo] = useState({ title: "", contents: "" });
+  const [todo, setTodo] = useState({ title: "", desc: "" });
   const [nextId, setNextId] = useState(3);
 
   const titleChangeHandler = (event) => {
     setTodo({ ...todo, title: event.target.value });
   };
 
-  const contentsChangeHandler = (event) => {
-    setTodo({ ...todo, contents: event.target.value });
+  const descChangeHandler = (event) => {
+    setTodo({ ...todo, desc: event.target.value });
   };
 
   const handleAddTodo = () => {
@@ -22,14 +22,14 @@ const TodoCreate = () => {
       ...todo,
       isDone: false,
     };
-    if (todo.title !== "" && todo.contents !== "") {
+    if (todo.title !== "" && todo.desc !== "") {
       dispatch(addTodo(newTodo));
       setNextId((prevId) => prevId + 1);
       console.log(newTodo);
     }
 
     // input값 초기화
-    setTodo({ title: "", contents: "" });
+    setTodo({ title: "", desc: "" });
   };
 
   return (
@@ -44,8 +44,8 @@ const TodoCreate = () => {
 
         <input
           type="text"
-          value={todo.contents}
-          onChange={contentsChangeHandler}
+          value={todo.desc}
+          onChange={descChangeHandler}
           placeholder="내용을 입력하세요"
         />
       </div>

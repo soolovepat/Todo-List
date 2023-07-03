@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TodoHead from "./components/TodoHead";
 import TodoCreate from "./components/TodoCreate";
 import TodoList from "./components/TodoList";
@@ -8,7 +8,7 @@ function Home() {
     <div>
       <TodoHead />
       <TodoCreate />
-      {/* <TodoList todos={todos} setTodos={setTodos} /> */}
+      <TodoList />
     </div>
   );
 }

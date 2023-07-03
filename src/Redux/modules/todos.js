@@ -1,17 +1,37 @@
 const ADD_TODO = "ADD_TODO";
+const REMOVE_TODO = "REMOVE_TODO";
+const TOGGLE_TODO = "TOGGLE_TODO";
 
 export const addTodo = (payload) => {
   return { type: ADD_TODO, payload };
 };
 
+export const removeTodo = (payload) => {
+  return { type: REMOVE_TODO, payload };
+};
+
+export const toggleTodo = (payload) => {
+  return { type: TOGGLE_TODO, payload };
+};
+
 const initialState = [
-  { id: 1, title: "투두리스트 만들기", contents: "구조 짜기", isDone: false },
-  { id: 2, title: "여행 가기", contents: "장소 정하기", isDone: true },
+  { id: 1, title: "투두리스트 만들기", desc: "구조 짜기", isDone: false },
+  { id: 2, title: "여행 가기", desc: "장소 정하기", isDone: true },
 ];
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return [...state, action.payload];
+    case REMOVE_TODO:
+      return state.filter((todo) => todo.id !== action.payload);
+    case TOGGLE_TODO:
+      return state.map((todo) =>
+        todo.id === action.payload ? { ...todo, isDone: !todo.isDone } : todo
+      );
+    default:
+      return state;
   }
 };
+
+export default todos;

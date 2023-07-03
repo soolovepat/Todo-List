@@ -1,14 +1,17 @@
 import React from "react";
+import { removeTodo, toggleTodo } from "../../Redux/modules/todos";
+import { useDispatch } from "react-redux";
 
-const TodoItem = ({ todo, removeTodo, toggleTodo }) => {
-  const { id, title, contents, isDone } = todo;
+const TodoItem = ({ todo }) => {
+  const dispatch = useDispatch();
+  const { id, title, desc, isDone } = todo;
 
   const handleRemove = () => {
-    removeTodo(id);
+    dispatch(removeTodo(id));
   };
 
   const handleToggle = () => {
-    toggleTodo(id);
+    dispatch(toggleTodo(id));
   };
 
   const truncateText = (text, maxLength) => {
@@ -19,12 +22,12 @@ const TodoItem = ({ todo, removeTodo, toggleTodo }) => {
   };
 
   const truncatedTitle = truncateText(title, 11);
-  const truncatedContents = truncateText(contents, 13);
+  const truncatedDesc = truncateText(desc, 13);
 
   return (
     <div className="todo-container" key={id}>
       <h3>{truncatedTitle}</h3>
-      <div className="todo-text">{truncatedContents}</div>
+      <div className="todo-text">{truncatedDesc}</div>
       <div className="todo-button">
         {isDone ? (
           <>
