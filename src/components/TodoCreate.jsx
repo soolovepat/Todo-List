@@ -27,7 +27,7 @@ const TodoCreate = ({ todos, setTodos }) => {
   };
 
   return (
-    <StForm className="text-form">
+    <StForm>
       <div className="input-area">
         <input
           type="text"
