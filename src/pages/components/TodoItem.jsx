@@ -2,6 +2,7 @@ import React from "react";
 import { removeTodo, toggleTodo } from "../../Redux/modules/todos";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
 
 const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const TodoItem = ({ todo }) => {
   const truncatedDesc = truncateText(desc, 13);
 
   return (
-    <div className="todo-container shadow-box" key={id}>
+    <StTodo className="shadow-box" key={id}>
       <h3>{truncatedTitle}</h3>
       <div className="todo-text">{truncatedDesc}</div>
       <div>
@@ -53,8 +54,36 @@ const TodoItem = ({ todo }) => {
           </>
         )}
       </div>
-    </div>
+    </StTodo>
   );
 };
 
 export default TodoItem;
+
+const StTodo = styled.div`
+  min-width: 226px;
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  .todo-text {
+    margin-bottom: 20px;
+  }
+  .todo-button {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .todo-button > button {
+    flex: 1;
+
+    color: #444;
+    background-color: #d1d1d1;
+  }
+
+  .todo-button > .complete-button {
+    background-color: #57ffbc;
+  }
+`;

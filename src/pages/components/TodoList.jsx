@@ -34,7 +34,7 @@ export default TodoList;
 const StTodoList = styled.div`
   padding: 30px;
 
-  .working-sec {
+  section:nth-child(1) {
     margin-bottom: 50px;
   }
 
@@ -43,33 +43,5 @@ const StTodoList = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 14px;
-  }
-
-  .todo-container {
-    min-width: 226px;
-  }
-
-  .todo-container > h3 {
-    margin: 0 0 10px;
-  }
-
-  .todo-container > .todo-text {
-    margin-bottom: 20px;
-  }
-  .todo-button {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .todo-button > button {
-    flex: 1;
-
-    color: #444;
-    background-color: #d1d1d1;
-  }
-
-  .todo-button > .complete-button {
-    background-color: #57ffbc;
   }
 `;
