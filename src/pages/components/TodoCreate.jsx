@@ -7,7 +7,6 @@ const TodoCreate = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos);
   const [todo, setTodo] = useState({ title: "", desc: "" });
-  //const [nextId, setNextId] = useState(3);
 
   const titleChangeHandler = (event) => {
     setTodo({ ...todo, title: event.target.value });
@@ -26,9 +25,8 @@ const TodoCreate = () => {
     };
     if (todo.title !== "" && todo.desc !== "") {
       dispatch(addTodo(newTodo));
-      //dispatch(updateNextId(nextId + 1));
-      // setNextId((prevId) => prevId + 1);
-      console.log(newTodo);
+    } else {
+      alert("입력해주세요 !");
     }
 
     // input값 초기화
