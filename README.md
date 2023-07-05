@@ -37,6 +37,12 @@ React를 이용한 To-Do List입니다.
 │   ├── shared
 │   │   └── Router.js
 │   │
+│   ├── styles
+│   │   ├── CreateStyle.jsx
+│   │   ├── EditStyle.jsx
+│   │   ├── ItemStyle.jsx
+│   │   └── ListStyle.jsx
+│   │
 │   ├── App.css
 │   ├── App.jsx
 │   ├── GlobalStyle.jsx
