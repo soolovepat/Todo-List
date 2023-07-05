@@ -7,6 +7,16 @@ main {
   margin: 0 auto;
 }
 
+input {
+    font-size: 18px;
+    line-height: 52px;
+    color: #fff;
+    border: 0;
+    background-color: #222;
+  }
+
+input:focus { outline: none; }
+
 ul {
   margin: 0;
   padding: 0;

@@ -22,6 +22,7 @@ const TodoCreate = () => {
       id: lastId + 1,
       ...todo,
       isDone: false,
+      isEdit: false,
     };
     if (todo.title !== "" && todo.desc !== "") {
       dispatch(addTodo(newTodo));
@@ -70,12 +71,7 @@ const StForm = styled.form`
 
   input {
     padding: 0 24px;
-    font-size: 18px;
-    line-height: 52px;
-    color: #fff;
-    border: 0;
-    border-radius: 22px;
-    background-color: #222;
+    border-radius: 24px;
   }
 
   .input-area {
