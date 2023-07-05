@@ -9,7 +9,9 @@ const TodoItem = ({ todo }) => {
   const { id, title, desc, isDone } = todo;
 
   const handleRemove = () => {
-    dispatch(removeTodo(id));
+    if (window.confirm("이 할일이 목록에서 삭제됩니다.")) {
+      dispatch(removeTodo(id));
+    }
   };
 
   const handleToggle = () => {
