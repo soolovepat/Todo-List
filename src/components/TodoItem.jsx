@@ -2,7 +2,7 @@ import React from "react";
 import { removeTodo, toggleTodo } from "../Redux/modules/todos";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import { StTodo } from "../styles/ItemStyle";
 
 const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -59,36 +59,3 @@ const TodoItem = ({ todo }) => {
 };
 
 export default TodoItem;
-
-const StTodo = styled.div`
-  min-width: 226px;
-
-  h3 {
-    margin: 0 0 10px;
-  }
-
-  .todo-text {
-    margin-bottom: 14px;
-  }
-
-  .detail-link {
-    margin-bottom: 24px;
-  }
-
-  a {
-    font-size: 16px;
-    color: #8f8f8f;
-    text-decoration: none;
-  }
-
-  .todo-button > button {
-    flex: 1;
-
-    color: #444;
-    background-color: #d1d1d1;
-  }
-
-  .todo-button > .complete-button {
-    background-color: #57ffbc;
-  }
-`;

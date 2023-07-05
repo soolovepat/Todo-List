@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import { styled } from "styled-components";
 import { useSelector } from "react-redux";
+import { StTodoList } from "../styles/ListStyle";
 
 const TodoSection = ({ title, todos, isDone }) => {
   const filteredTodos = todos.filter((todo) => todo.isDone === isDone);
@@ -30,18 +30,3 @@ const TodoList = () => {
 };
 
 export default TodoList;
-
-const StTodoList = styled.div`
-  padding: 30px;
-
-  section:nth-child(1) {
-    margin-bottom: 50px;
-  }
-
-  .list-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-`;
