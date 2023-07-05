@@ -2,7 +2,7 @@
 
 React를 이용한 To-Do List입니다.
 
-🔗 <a href="https://www.google.com/" target="https://todo-list-soolovepat.vercel.app" target="_blank">vercel로 배포한 프로젝트 바로가기</a>
+🔗 <a href="https://todo-list-soolovepat.vercel.app" target="https://todo-list-soolovepat.vercel.app" target="_blank">vercel로 배포한 프로젝트 바로가기</a>
 
 <br/>
 
