@@ -24,11 +24,9 @@ const TodoCreate = () => {
       isDone: false,
       isEdit: false,
     };
-    if (todo.title !== "" && todo.desc !== "") {
-      dispatch(addTodo(newTodo));
-    } else {
-      alert("입력해주세요 !");
-    }
+    todo.title !== "" && todo.desc !== ""
+      ? dispatch(addTodo(newTodo))
+      : alert("입력해주세요 !");
 
     // input값 초기화
     setTodo({ title: "", desc: "" });
