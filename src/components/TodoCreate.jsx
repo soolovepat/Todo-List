@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
-import { addTodo } from "../../Redux/modules/todos";
+import { addTodo } from "../Redux/modules/todos";
 
 const TodoCreate = () => {
   const dispatch = useDispatch();

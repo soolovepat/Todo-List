@@ -1,5 +1,5 @@
 import React from "react";
-import { removeTodo, toggleTodo } from "../../Redux/modules/todos";
+import { removeTodo, toggleTodo } from "../Redux/modules/todos";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
