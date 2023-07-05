@@ -81,12 +81,6 @@ const StTodo = styled.div`
     text-decoration: none;
   }
 
-  .todo-button {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
   .todo-button > button {
     flex: 1;
 

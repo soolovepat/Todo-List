@@ -8,14 +8,18 @@ main {
 }
 
 input {
+    padding: 0 24px;
     font-size: 18px;
     line-height: 52px;
     color: #fff;
     border: 0;
+    border-radius: 24px;
     background-color: #222;
   }
 
-input:focus { outline: none; }
+input:focus {
+  outline: none;
+}
 
 ul {
   margin: 0;
@@ -32,6 +36,11 @@ button {
   line-height: 40px;
   letter-spacing: -1px;
 }
+
+.todo-button {
+    display: flex;
+    gap: 10px;
+  }
 
 .todo-head {
   margin: 20px 30px;

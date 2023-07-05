@@ -26,7 +26,18 @@ const TodoEdit = ({ todo, onEditToggle }) => {
 
   return (
     <StEditForm>
-      <div className="input-edit-area">
+      <div className="top-title">
+        <span>ID : {todo.id}</span>
+        <div className="todo-button">
+          <button onClick={handleSave} type="button">
+            저장하기
+          </button>
+          <button onClick={onEditToggle} type="button">
+            취소
+          </button>
+        </div>
+      </div>
+      <div>
         <input
           type="text"
           value={editedTodo.title}
@@ -40,15 +51,6 @@ const TodoEdit = ({ todo, onEditToggle }) => {
           placeholder="내용을 입력하세요"
         />
       </div>
-
-      <div>
-        <button onClick={handleSave} type="button">
-          저장하기
-        </button>
-        <button onClick={onEditToggle} type="button">
-          취소
-        </button>
-      </div>
     </StEditForm>
   );
 };
@@ -59,19 +61,12 @@ const StEditForm = styled.form`
   display: flex;
   flex-direction: column;
 
-  .input-edit-area {
-    border-radius: 24px;
-    background-color: #222;
-    padding: 30px;
-  }
-
   input {
-    height: fit-content;
-    margin: 0 0 20px 0;
+    width: 90%;
+    margin: 0 0 30px 0;
   }
 
   input:first-child {
-    margin: 0px 0 20px 0;
-    border-bottom: 1px solid #dadada;
+    margin: 40px 0 20px 0;
   }
 `;

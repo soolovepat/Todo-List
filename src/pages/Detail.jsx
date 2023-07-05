@@ -19,20 +19,23 @@ function Detail() {
 
   return (
     <StDetail className="shadow-box">
-      <div className="top-title">
-        <span>ID : {findData.id}</span>
-        <button onClick={() => navigate("/")}>이전으로</button>
-      </div>
-
       {findData.isEdit ? (
         <>
           <TodoEdit todo={findData} onEditToggle={handleEditToggle} />
         </>
       ) : (
         <>
+          <div className="top-title">
+            <span>ID : {findData.id}</span>
+            <div className="todo-button">
+              <button className="edit-button" onClick={handleEditToggle}>
+                수정하기
+              </button>
+              <button onClick={() => navigate("/")}>이전으로</button>
+            </div>
+          </div>
           <h1>{findData.title}</h1>
           <p>{findData.desc}</p>
-          <button onClick={handleEditToggle}>수정하기</button>
         </>
       )}
     </StDetail>
@@ -56,9 +59,14 @@ const StDetail = styled.div`
 
   button {
     color: #535353;
+    max-width: fit-content;
   }
 
   h1 {
     margin: 40px 0 0 0;
+  }
+
+  p {
+    margin-bottom: 40px;
   }
 `;
