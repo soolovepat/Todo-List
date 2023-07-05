@@ -21,6 +21,7 @@ React를 이용한 To-Do List입니다.
 │   │   ├── TodoItem.jsx
 │   │   ├── TodoList.jsx
 │   │   └── index.html
+│   │
 │   ├── pages
 │   │   ├── Detail.jsx
 │   │   └── Home.jsx
@@ -30,13 +31,16 @@ React를 이용한 To-Do List입니다.
 │   │   │   └── configStore.js
 │   │   └── modules
 │   │       └── todos.js
+│   │
 │   ├── shared
 │   │   └── Router.js
+│   │
 │   ├── App.css
 │   ├── App.jsx
 │   ├── GlobalStyle.jsx
 │   ├── index.css
 │   └── index.js
+│
 ├── yarn.lock
 ├── package.json
 └── README.md
