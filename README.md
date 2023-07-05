@@ -29,6 +29,7 @@ React를 이용한 To-Do List입니다.
 │   ├── Redux
 │   │   ├── config
 │   │   │   └── configStore.js
+│   │   │
 │   │   └── modules
 │   │       └── todos.js
 │   │
