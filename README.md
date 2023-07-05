@@ -40,12 +40,12 @@ React를 이용한 To-Do List입니다.
 │   ├── styles
 │   │   ├── CreateStyle.jsx
 │   │   ├── EditStyle.jsx
+│   │   ├── GlobalStyle.jsx
 │   │   ├── ItemStyle.jsx
 │   │   └── ListStyle.jsx
 │   │
 │   ├── App.css
 │   ├── App.jsx
-│   ├── GlobalStyle.jsx
 │   ├── index.css
 │   └── index.js
 │
