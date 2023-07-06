@@ -5,11 +5,11 @@ import TodoList from "../components/TodoList";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <TodoHead />
       <TodoCreate />
       <TodoList />
-    </div>
+    </>
   );
 };
 
