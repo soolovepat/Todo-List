@@ -44,9 +44,8 @@ React를 이용한 To-Do List입니다.
 │   │   ├── ItemStyle.jsx
 │   │   └── ListStyle.jsx
 │   │
-│   ├── App.css
 │   ├── App.jsx
-│   ├── index.css
+│   ├── index.html
 │   └── index.js
 │
 ├── yarn.lock
