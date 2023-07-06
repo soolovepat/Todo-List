@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
 import TodoEdit from "../components/TodoEdit";
 import { editTodo } from "../Redux/modules/todos";
+import { StDetail } from "../styles/DetailStyle";
 
 function Detail() {
   const dispatch = useDispatch();
@@ -43,30 +43,3 @@ function Detail() {
 }
 
 export default Detail;
-
-const StDetail = styled.div`
-  margin: 80px auto;
-  max-width: 500px;
-
-  .top-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid #ebebeb;
-    padding-bottom: 14px;
-  }
-
-  button {
-    color: #535353;
-    max-width: fit-content;
-  }
-
-  h1 {
-    margin: 40px 0 0 0;
-  }
-
-  p {
-    margin-bottom: 40px;
-  }
-`;
