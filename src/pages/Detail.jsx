@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import TodoEdit from "../components/TodoEdit";
+import TodoEdit from "../features/TodoEdit";
 import { editTodo } from "../Redux/modules/todos";
 import { StDetail } from "../styles/DetailStyle";
 
