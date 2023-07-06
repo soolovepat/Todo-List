@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoHead = () => {
+const Header = () => {
   return (
     <header className="todo-head">
       <span>My Todo List</span>
@@ -9,4 +9,4 @@ const TodoHead = () => {
   );
 };
 
-export default TodoHead;
+export default Header;
