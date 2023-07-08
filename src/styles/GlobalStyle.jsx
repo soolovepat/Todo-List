@@ -9,6 +9,7 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
 }
 
 code {
@@ -17,9 +18,13 @@ code {
 }
 
 main {
-  max-width: 1200px;
+  width: 1200px;
   min-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 4px 12px 30px 6px rgba(0, 0, 0, 0.09);
+  background-color: #fff;
 }
 
 input {
@@ -58,9 +63,10 @@ button {
   }
 
 .todo-head {
-  margin: 20px 30px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 .shadow-box {

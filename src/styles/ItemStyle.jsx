@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StTodo = styled.div`
-  min-width: 226px;
+  min-width: 231px;
 
   h3 {
     margin: 0 0 10px;

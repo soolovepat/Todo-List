@@ -8,12 +8,9 @@ const TodoCreate = () => {
   const todos = useSelector((state) => state.todos);
   const [todo, setTodo] = useState({ title: "", desc: "" });
 
-  const titleChangeHandler = (event) => {
-    setTodo({ ...todo, title: event.target.value });
-  };
-
-  const descChangeHandler = (event) => {
-    setTodo({ ...todo, desc: event.target.value });
+  const changeHandler = (event) => {
+    const { name, value } = event.target;
+    setTodo({ ...todo, [name]: value });
   };
 
   const handleAddTodo = () => {
@@ -37,15 +34,17 @@ const TodoCreate = () => {
       <div className="input-area">
         <input
           type="text"
+          name="title"
           value={todo.title}
-          onChange={titleChangeHandler}
+          onChange={changeHandler}
           placeholder="제목을 입력하세요"
         />
 
         <input
           type="text"
+          name="desc"
           value={todo.desc}
-          onChange={descChangeHandler}
+          onChange={changeHandler}
           placeholder="내용을 입력하세요"
         />
       </div>

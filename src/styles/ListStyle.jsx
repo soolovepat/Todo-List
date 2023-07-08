@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StTodoList = styled.div`
-  padding: 30px;
+  padding: 20px;
 
   section:nth-child(1) {
     margin-bottom: 50px;
